@@ -1,0 +1,26 @@
+mindi 0.5
+
+- Repackaged and released as gem.
+
+mindi 0.4
+
+- The internal names for instance variables used to store values associated
+  with services are now more obscure. Thanks to Greg Fodor for the suggestion.
+
+mindi 0.3
+
+- Allow +nil+ and +false+ as service values. This allows limited rake-like functionality--see examples/rake-alike.rb.
+
+- Can now include MinDI::BasicContainer instead of extend MinDI::Container, for convenience.
+
+- Lots of examples.
+
+mindi 0.2
+
+- Injectable containers. See examples/inject.rb. Note that including the MinDI::Injectable module not only provides this new functionality but also extends with MinDI::Container
+
+- Because of the above change, including MinDI::Injectable is now the recommended way of using MinDI.
+
+mindi 0.1
+
+- first release
