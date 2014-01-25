@@ -112,40 +112,40 @@ Notes
 - The Injectable module can be used without MinDI containers as a kind of
   delegation:
 
-    require 'mindi'
-    x = [1,2,3]
-    y = {}
-    x.extend MinDI::Injectable
-    x.inject_into y
-    p y.reverse    # ==> [3, 2, 1]
+      require 'mindi'
+      x = [1,2,3]
+      y = {}
+      x.extend MinDI::Injectable
+      x.inject_into y
+      p y.reverse    # ==> [3, 2, 1]
 
 - MinDI can be used as a Rake-like task scheduler:
 
-    require 'mindi'
+      require 'mindi'
 
-    class Tasks
-      include MinDI::BasicContainer
+      class Tasks
+        include MinDI::BasicContainer
 
-      a  { print "a" }
-      b  { a; print "b" }
-      c  { a; print "c" }
-      d  { b; c; print "d" }
-    end
+        a  { print "a" }
+        b  { a; print "b" }
+        c  { a; print "c" }
+        d  { b; c; print "d" }
+      end
 
-    Tasks.new.d  # ==> abcd 
+      Tasks.new.d  # ==> abcd 
 
 Bugs
 ----
 
 - Private and protected services must be declared explicitly:
 
-    private :some_service
+      private :some_service
 
   rather than by putting them in the private section of the class def.
 
 - Because of how ruby defines Proc#arity, a service defined like
 
-    sname { do_something }
+      sname { do_something }
 
   with no argument list will be treated as a multikey_multiton rather than
   as a singleton. The behavior will be the same, though.
