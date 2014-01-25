@@ -121,6 +121,7 @@ Notes
 
 - MinDI can be used as a Rake-like task scheduler:
 
+```
       require 'mindi'
       
       class Tasks
@@ -133,6 +134,7 @@ Notes
       end
       
       Tasks.new.d  # ==> abcd 
+```
 
 Bugs
 ----
