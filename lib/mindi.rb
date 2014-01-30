@@ -6,7 +6,7 @@ module MinDI  # :nodoc:
   # container].
   #
   # Use MinDI by <b><tt>include</tt></b>ing the MinDI::InjectableContainer
-  # module in your container class. As of version 0.2, this does two things: it
+  # module in your container class. This does two things: it
   # <b><tt>extend</tt></b>s your container class with the Container module,
   # which provides class methods for expressing service definitions in a
   # natural, rubylike way. It also injects the container into all services which
@@ -31,7 +31,7 @@ module MinDI  # :nodoc:
   # Note that services can be defined dynamically by reopening the class scope
   # or simply by calling the service with a block. See examples/dynamic.rb.
 
-  VERSION = '0.5'
+  VERSION = '0.6'
 
   module Container
   
@@ -138,7 +138,7 @@ module MinDI  # :nodoc:
     #
     #   threaded(:service_name) { |thr| ... }
     
-    def threaded(name, &impl)  # :yields: thr
+    def threaded(name, &impl)  # :yields: thread
       impl_name = Container.impl_method_name(name)
       define_implementation(impl_name, impl)
       arity = impl.arity

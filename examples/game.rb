@@ -39,13 +39,14 @@ class GameContainer
   
   # A multiton.
   # The |name| means there can be many things--one for each name.
-  # internally, there is a hash  stored in @thing that maps
-  # each name strign to a Thing.
+  # internally, there is a hash stored in @thing that maps
+  # each name to a Thing.
   thing { |name| Thing.new name }
 
   # The shovel (unique with that name).
   shovel { thing "Shovel" }
 
+  # Another multiton -- mapping from name to Room instance.
   room { |name| Room.new name, [] }
 
   start_room { room "garden" }
@@ -65,7 +66,7 @@ puts
 
 # Create a new thing:
 ball = game.thing("ball")
-ball.location = game.room "basement"
+ball.location = game.room("basement")
 p ball
 puts
 

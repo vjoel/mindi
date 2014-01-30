@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ["Joel VanderWerf"]
   s.date = Time.now.strftime "%Y-%m-%d"
   s.summary = "Minimalist dependency injection"
-  s.description = "MinDI is minimalist in that it attempts to map concepts of DI into basic ruby constructs, rather than into a layer of specialized constructs."
+  s.description = "MinDI is minimalist in that it attempts to map concepts of dependency injection into basic ruby constructs, rather than into a layer of specialized constructs."
   s.email = "vjoel@users.sourceforge.net"
   s.extra_rdoc_files = ["README.md", "COPYING"]
   s.files = Dir[
