@@ -8,6 +8,13 @@ constructs, rather than into a layer of specialized constructs. In particular, c
 
 MinDI builds on this minimal DI container by adding the InjectableContainer concept, which is a kind of DI available only in dynamic languages: through the magic of <tt>method_missing</tt>, a service may invoke other services without having explicit setter or constructor references to those services.
 
+Installation
+------------
+
+To install MinDI as a gem:
+
+    $ gem install mindi
+
 Synopsis
 --------
 
